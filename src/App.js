@@ -29,7 +29,6 @@ function App() {
 }
 
   const updateName = (id,value) => {
-        setErrors([])
         buttonDisabled()
         setAddress([ 
           ...address.map((item,index) => {
@@ -42,6 +41,12 @@ function App() {
                     title : "Daha Önce yazdığın durak adıyla bu durak adının eşleşmemesi lazım",
                     id: id
                   }
+                ])
+              }
+              else if(item.name !== value && index !== id && item.name.length > 0 ) {
+                console.log("bu alana girdin silme");
+                setErrors([
+                  ...errors.filter((err,index) => err.id !== id)
                 ])
               }
               return item
