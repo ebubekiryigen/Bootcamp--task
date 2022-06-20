@@ -22,7 +22,9 @@ function App() {
     address.map((add) => { 
      if(add.name.length !== 0 && add.enlem.length !== 0 && add.boylam.length !== 0) {
        setButton(true)
-     } // bu işlem bi tık mantıksız ancak geliştirecektim süre yetmedi :)
+     } else {
+      setButton(false)
+     }
  })
 }
 
